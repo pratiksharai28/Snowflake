@@ -1,9 +1,10 @@
 from utils import SnowFlakeConnector
+import os
 
 # Vault address and token (adjust these as needed)
 vault_addr = "http://127.0.0.1:8200"  # Your Vault server address
-vault_token = "hvs.7YS28Hh1SKB102HwAJZjr6fL"  # Your Vault token (make sure it's correct)
-
+# vault_token = "hvs.7YS28Hh1SKB102HwAJZjr6fL"  # Your Vault token (make sure it's correct)
+vault_token = os.getenv('VAULT_TOKEN')
 # Path where the Snowflake credentials (user and password) are stored in Vault
 secret_path = "snowflake_password"  # Modify to match your secret path in Vault
 
